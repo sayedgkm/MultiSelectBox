@@ -1,1 +1,51 @@
+ <div class="padding-left-10">
+    <div class="row">
+        <div class="col-md-6 align-center">
+            Available Items
+        </div>
+        <div class="col-md-6 align-center">
+            Assigned Items
+        </div>
+     </div>
+     <div class='row'>
+        <div class="col-md-5">
+            <input (keyup)="searchAvailableItem($event)" class="w-90 padding-left-5 round" placeholder="Search..">
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+            <input class="w-90 padding-left-5 round" placeholder="Search..">
+        </div>
+     </div>
+     <br>
+     <div class="row">
+        <div class="col-md-5">
+            <select multiple class="w-90" size="20">
+                <option *ngFor="let item of availableItemsSearch" [value]="item.value" (click)="onAvailableItemSelect(item.value)">
+                    {{item.name}}
+                </option>
+            </select>
+        </div>
+        <div class="col-md-2 align-center">
+            <button (click)="moveItemRight()" class="btn btn-primary margin-top-bottom-5" style="margin-top: 130px;">
+                >
+            </button><br/>
+            <button class="btn btn-primary margin-top-bottom-5">
+                >>
+            </button><br/>
+            <button class="btn btn-primary margin-top-bottom-5">
+                <<
+            </button><br/>
+            <button (click)="moveItemLeft()" class = "btn btn-primary margin-top-bottom-5">
+                <
+            </button><br/>
+        </div>
+        <div class="col-md-5">
+            <select multiple class="w-90" size="20">
+                <option *ngFor="let item of assignedItemsSearch" [value] = "item.value" (click)="onAssignedItemSelect(item.value)">
+                    {{item.name}}</option>
+            </select>
+        </div>
+     </div>
+ </div>
 
+ 
